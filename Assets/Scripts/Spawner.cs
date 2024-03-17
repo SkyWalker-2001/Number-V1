@@ -4,18 +4,18 @@ using TMPro;
 public class Spawner : MonoBehaviour
 {
     public GameObject objectPrefab;
-    public int numberOfObjects = 10;
     public float spawnAreaWidth = 10f;
     public float spawnAreaHeight = 10f;
 
     void Start()
     {
-        SpawnObjects();
+        int spawn_Quantity = GameManager.gameManager.Spawn_Quantity();
+        SpawnObjects(spawn_Quantity - 1);
     }
 
-    void SpawnObjects()
+    void SpawnObjects(int spawn_Quantity)
     {
-        for (int i = 0; i < numberOfObjects; i++)
+        for (int i = 0; i < spawn_Quantity; i++)
         {
             Vector2 randomPosition = GetRandomPosition();
             GameObject newObject = Instantiate(objectPrefab, randomPosition, Quaternion.identity);
