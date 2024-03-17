@@ -17,7 +17,7 @@ public class Button : MonoBehaviour
 
     private IEnumerator Canvas_Enable()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(5);
         card_Black.enabled = true;
     }
 
