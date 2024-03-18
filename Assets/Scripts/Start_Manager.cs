@@ -16,6 +16,7 @@ public class Start_Manager : MonoBehaviour
     {
         TimeOn = true;
         blockScreen_Canvas.enabled = true;
+
         StartCoroutine(BLockScreenRoutine());
     }
 
