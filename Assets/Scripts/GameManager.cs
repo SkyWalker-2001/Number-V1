@@ -4,7 +4,13 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager gameManager;
-    
+
+    [Header("SceneManager how many you want")]
+    [SerializeField] private int _scene_Numbers;
+    public int _currentSceneIndex = 1;
+
+
+    [Header("Spawner")]
     [SerializeField] private int _SpawnIndex;
 
     private int _currentIndex;
@@ -20,6 +26,8 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        _currentSceneIndex = 1;
+
     }
 
     private void Start()
@@ -44,9 +52,11 @@ public class GameManager : MonoBehaviour
     private void Win_Condition()
     {
         _currentIndex = 1;
+        _currentSceneIndex++;
         _SpawnIndex++;
         SceneManager.LoadScene("GamePlay");
         Debug.Log("WinCondition");
+
     }
 
     private void ButtonManager_FN(int number)
@@ -70,6 +80,7 @@ public class GameManager : MonoBehaviour
     {
         Debug.Log(_currentIndex);
         Debug.Log(_SpawnIndex);
+        Debug.Log(_currentSceneIndex);
         Debug.Log("GAME OVER WRONG SEQUENCE");
     }
 

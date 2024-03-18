@@ -3,14 +3,30 @@ using TMPro;
 
 public class Spawner : MonoBehaviour
 {
+    public static Spawner spawner;
+
+    [SerializeField] private TextMeshProUGUI Scene_Number;
+
     public GameObject objectPrefab;
     public float spawnAreaWidth = 10f;
     public float spawnAreaHeight = 10f;
 
+    private void Awake()
+    {
+        spawner = this;
+    }
+
     void Start()
     {
         int spawn_Quantity = GameManager.gameManager.Spawn_Quantity();
+
         SpawnObjects(spawn_Quantity - 1);
+
+        int scene_Number = GameManager.gameManager._currentSceneIndex;
+
+        Debug.Log(scene_Number);
+
+        Scene_Number.text = scene_Number.ToString();
     }
 
     void SpawnObjects(int spawn_Quantity)
@@ -50,4 +66,6 @@ public class Spawner : MonoBehaviour
         float randomY = Random.Range(-spawnAreaHeight / 2f, spawnAreaHeight / 2f);
         return new Vector2(randomX, randomY);
     }
+
+
 }
