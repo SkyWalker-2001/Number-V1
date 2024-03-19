@@ -41,6 +41,8 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _currentIndex = 1;
+
+        Debug.Log("Hello");
     }
 
     private void Update()
