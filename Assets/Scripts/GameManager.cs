@@ -7,7 +7,7 @@ public class GameManager : MonoBehaviour
     public static GameManager gameManager;
 
     [Header("SceneManager how many you want")]
-    [SerializeField] private int _scene_Numbers;
+    [SerializeField] public int scene_Numbers;
     public int _currentSceneIndex = 1;
 
     [Header("Scene Score Manager")]
@@ -41,30 +41,15 @@ public class GameManager : MonoBehaviour
     private void Start()
     {
         _currentIndex = 1;
-
-        Debug.Log("Hello");
-    }
-
-    private void Update()
-    {
-    }
-
-    private void FixedUpdate()
-    {
     }
 
     private void EndGame_Screen()
     {
-        if (_scene_Numbers == _currentSceneIndex)
+        if (scene_Numbers == _currentSceneIndex)
         {
             Debug.Log("EndScreen Scene KHATAM");
             Fade_canvas.fader.FaderLoader_String("EndGame");
         }
-    }
-
-    public void RestartGame()
-    {
-
     }
 
     public void ButtonManager(int number)
@@ -72,23 +57,23 @@ public class GameManager : MonoBehaviour
         ButtonManager_FN(number);
         if (_currentIndex == _SpawnIndex)
         {
-            Win_Condition();
+            Next_Stage();
         }
     }
 
-    private void Win_Condition()
+    private void Next_Stage()
     {
         pass_turn_num++;
 
         _currentIndex = 1;
         _currentSceneIndex++;
         _SpawnIndex++;
+
+
         SceneManager.LoadScene("GamePlay");
-        Debug.Log("WinCondition");
+        Debug.Log("Next Stage in Next_Stage_FN");
 
         EndGame_Screen();
-
-
     }
 
     private void ButtonManager_FN(int number)
@@ -110,11 +95,12 @@ public class GameManager : MonoBehaviour
     {
         fail_turn_num++;
 
-        _currentIndex = 1;
+        // changed it from 1 to 0 and bug which accept 2 two times solved NEED TESTING
+        _currentIndex = 0;
         _currentSceneIndex++;
         _SpawnIndex++;
         SceneManager.LoadScene("GamePlay");
-        Debug.Log("WinCondition");
+        Debug.Log("Move To Next Stage");
 
         EndGame_Screen();
     }
