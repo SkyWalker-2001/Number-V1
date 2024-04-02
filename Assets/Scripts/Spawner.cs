@@ -5,9 +5,11 @@ public class Spawner : MonoBehaviour
 {
     public static Spawner spawner;
 
-    [SerializeField] private TextMeshProUGUI Scene_Number;
+    [SerializeField] private TextMeshProUGUI scene_Number;
     [SerializeField] private TextMeshProUGUI pass_Text;
     [SerializeField] private TextMeshProUGUI fail_Text;
+    [SerializeField] private TextMeshProUGUI stage_Info;
+
 
     public GameObject objectPrefab;
     public float spawnAreaWidth = 10f;
@@ -27,11 +29,15 @@ public class Spawner : MonoBehaviour
         int scene_Number = GameManager.gameManager._currentSceneIndex;
         int pass_Num_Text = GameManager.gameManager.pass_turn_num;
         int fail_Num_Text = GameManager.gameManager.fail_turn_num;
+        int total_Scene_Number = GameManager.gameManager.scene_Numbers;
 
-        Scene_Number.text = scene_Number.ToString();
+        this.scene_Number.text = $"{scene_Number} / {total_Scene_Number}" ;
         pass_Text.text = pass_Num_Text.ToString();
         fail_Text.text = fail_Num_Text.ToString();
-  
+        stage_Info.text = "";
+
+
+
     }
 
     void SpawnObjects(int spawn_Quantity)

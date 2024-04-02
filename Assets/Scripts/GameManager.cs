@@ -16,12 +16,12 @@ public class GameManager : MonoBehaviour
     [SerializeField] public int fail_turn_num;
 
     [Header("Spawner")]
-    [SerializeField] private int _SpawnIndex;
+    [SerializeField] public int _SpawnIndex;
 
     [Header("Screen Block")]
     [SerializeField] private int _SpawnCount;
 
-    private int _currentIndex;
+    public int _currentIndex;
     
     private void Awake()
     {
