@@ -31,12 +31,10 @@ public class Spawner : MonoBehaviour
         int fail_Num_Text = GameManager.gameManager.fail_turn_num;
         int total_Scene_Number = GameManager.gameManager.scene_Numbers;
 
-        this.scene_Number.text = $"{scene_Number} / {total_Scene_Number}" ;
+        this.scene_Number.text = $"{scene_Number} / {total_Scene_Number - 1}" ;
         pass_Text.text = pass_Num_Text.ToString();
         fail_Text.text = fail_Num_Text.ToString();
-        stage_Info.text = "";
-
-
+        stage_Info.text = $"Please click/tap from 1 to {scene_Number}";
 
     }
 
