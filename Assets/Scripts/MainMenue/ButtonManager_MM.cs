@@ -3,6 +3,19 @@ using UnityEngine.SceneManagement;
 
 public class ButtonManager_MM : MonoBehaviour
 {
+    [SerializeField] private GameObject info_Panel;
+
+    private bool infoPanel_toggle;
+
+    private void Start()
+    {
+        if (info_Panel != null)
+        {
+            infoPanel_toggle = false;
+            info_Panel.SetActive(false);
+        }
+    }
+
     public void OnRookie_Button()
     {
         GameManager.gameManager.scene_Numbers = 5;
@@ -14,7 +27,7 @@ public class ButtonManager_MM : MonoBehaviour
     {
         GameManager.gameManager.scene_Numbers = 8;
         Reset_Stage();
-        Fade_canvas.fader.FaderLoader_String("GamePlay"); 
+        Fade_canvas.fader.FaderLoader_String("GamePlay");
     }
 
     public void OnProfessional_Button()
@@ -22,6 +35,16 @@ public class ButtonManager_MM : MonoBehaviour
         GameManager.gameManager.scene_Numbers = 10;
         Reset_Stage();
         Fade_canvas.fader.FaderLoader_String("GamePlay");
+    }
+
+    public void OnInfo_Button()
+    {
+
+        if (info_Panel != null)
+        {
+            infoPanel_toggle = !infoPanel_toggle;
+            info_Panel.SetActive(infoPanel_toggle);
+        }
     }
 
     private void Reset_Stage()
