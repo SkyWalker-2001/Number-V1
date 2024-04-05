@@ -69,10 +69,7 @@ public class GameManager : MonoBehaviour
         _currentSceneIndex++;
         _SpawnIndex++;
 
-
         SceneManager.LoadScene("GamePlay");
-        Debug.Log("Next Stage in Next_Stage_FN");
-
         EndGame_Screen();
     }
 
@@ -100,8 +97,6 @@ public class GameManager : MonoBehaviour
         _currentSceneIndex++;
         _SpawnIndex++;
         SceneManager.LoadScene("GamePlay");
-        Debug.Log("Move To Next Stage");
-
         EndGame_Screen();
     }
 
