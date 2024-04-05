@@ -15,7 +15,7 @@ public class End_Scene_Manager : MonoBehaviour
     private void Start()
     {
         Scene_Handlers();
-        Score_SYS();
+        //Score_SYS();
     }
 
     private void Scene_Handlers()
@@ -28,22 +28,22 @@ public class End_Scene_Manager : MonoBehaviour
         fail_TMPro.text = _fail_Attempt.ToString();
     }
 
-    private void Score_SYS(){
-        switch (_total_Scene_Index)
-        {
-            case 5:
-                Debug.Log("5");
-                break;
-            case 8:
-                Debug.Log("8");
-                break;
-            case 10:
-                Debug.Log("10");
-                break;
+    // private void Score_SYS(){
+    //     switch (_total_Scene_Index)
+    //     {
+    //         case 5:
+    //             Debug.Log("5");
+    //             break;
+    //         case 8:
+    //             Debug.Log("8");
+    //             break;
+    //         case 10:
+    //             Debug.Log("10");
+    //             break;
 
-            default:
-                Debug.Log("Out of Bounds");
-                break;
-        }
-    }
+    //         default:
+    //             Debug.Log("Out of Bounds");
+    //             break;
+    //     }
+    // }
 }

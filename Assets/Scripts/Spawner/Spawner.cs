@@ -52,7 +52,7 @@ public class Spawner : MonoBehaviour
             }
             else
             {
-                Debug.LogWarning("TextMeshPro component not found in children of prefab.");
+                //Debug.LogWarning("TextMeshPro component not found in children of prefab.");
             }
 
             // Adjust position to prevent overlap

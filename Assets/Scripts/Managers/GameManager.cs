@@ -47,7 +47,6 @@ public class GameManager : MonoBehaviour
     {
         if (scene_Numbers == _currentSceneIndex)
         {
-            Debug.Log("EndScreen Scene KHATAM");
             Fade_canvas.fader.FaderLoader_String("EndGame");
         }
     }
@@ -77,7 +76,7 @@ public class GameManager : MonoBehaviour
     {
         if (_currentIndex == number)
         {
-            Debug.Log("CarryON");
+            //Debug.Log("CarryON");
         }
 
         else

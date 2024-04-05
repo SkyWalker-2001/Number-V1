@@ -26,8 +26,6 @@ public class Button : MonoBehaviour
         card_Black.enabled = false;
         int number = int.Parse(m_Button.GetComponentInChildren<TextMeshPro>().text);
 
-        Debug.Log(number);
-
         GameManager.gameManager.ButtonManager(number);
     }
 }

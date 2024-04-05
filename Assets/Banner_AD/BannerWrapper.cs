@@ -34,8 +34,6 @@ public class BannerWrapper : MonoBehaviour
         AdRequest request = new AdRequest();
         bannerView.LoadAd(request);
         bannerView.Hide();
-
-        Debug.Log("Chalia 60 sec baad");
     }
 
 }
